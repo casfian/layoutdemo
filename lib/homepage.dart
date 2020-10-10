@@ -11,6 +11,7 @@ class Homepage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
+          margin: EdgeInsets.fromLTRB(10, 0, 20, 0),
           child: Column(
             children: [
               //Row 1
@@ -32,8 +33,9 @@ class Homepage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Kolej Komuniti Kuala Langat',
-                  style: TextStyle(fontSize: 24),
+                  Text(
+                    'Kolej Komuniti Kuala Langat',
+                    style: TextStyle(fontSize: 24),
                   ),
                 ],
               ),
@@ -47,10 +49,22 @@ class Homepage extends StatelessWidget {
                   Image.asset('images/gambar3.png'),
                 ],
               ),
-
+              SizedBox(
+                height: 30,
+              ),
               //Row 4
               Row(
-                
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  InkWell(
+                    child: Image.asset('images/gambar4.png'),
+                    onTap: () {
+                      Navigator.pushNamed(context, 'studentlist');
+                    },
+                  ),
+                  Image.asset('images/gambar5.png'),
+                  Image.asset('images/gambar6.png'),
+                ],
               ),
             ],
           ),

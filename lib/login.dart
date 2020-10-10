@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
+
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +29,7 @@ class Login extends StatelessWidget {
                       width: 269,
                       height: 47,
                       child: TextField(
+                        controller: emailController,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                         ),
@@ -43,6 +48,7 @@ class Login extends StatelessWidget {
                       width: 269,
                       height: 47,
                       child: TextField(
+                        controller: passwordController,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                         ),
@@ -58,7 +64,11 @@ class Login extends StatelessWidget {
                 child: RaisedButton(
                     color: Color.fromRGBO(247, 244, 244, 1.0),
                     onPressed: () {
-                      Navigator.pushNamed(context, 'homepage');
+                      if (emailController.text == "abc" && passwordController.text == "123") {
+                        Navigator.pushNamed(context, 'homepage');
+                      } else {
+                        print('error');
+                      }
                     },
                     child: Text('Login')),
               ),
